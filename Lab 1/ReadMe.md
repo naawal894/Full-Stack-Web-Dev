@@ -1,28 +1,15 @@
 # 🌐 Full Stack Web Development - Lab 01 (CS-301L)
 
-Official **Lab 01** submission for **Nawal Fateh** for the **Full Stack Web Development Lab (CS-301L)** course at **Air University**.
+ **Lab 01** submission for **Nawal Fateh** for the **Full Stack Web Development Lab (CS-301L)** course at **Air University**.
 
 ---
 
-## 📌 Student & Course Details
-
-| Field | Details |
-| :--- | :--- |
-| **Student Name** | Nawal Fateh |
-| **Roll Number** | 242211 |
-| **Course** | Full Stack Web Development Lab |
-| **Course Code** | CS-301L |
-| **Lab Task** | Lab 01 - Calculator UI (HTML & CSS) |
-| **Academic Session** | 2026–2027 |
-| **Institution** | Air University |
-
----
 
 ## 📋 Features
 
-- 🌸 **Cute & Beautiful Pastel Theme**: Designed with a soft rose velvet backdrop, pastel milk accents, and bubbly key shapes.
+- 🌸 **Theme**: Designed with a soft rose velvet backdrop, pastel milk accents, and bubbly key shapes.
 - 🎨 **Pure HTML5 & CSS3**: Built entirely using semantic HTML markup and modern CSS3 without JavaScript.
-- 🌓 **Pure CSS Theme Switcher**: Easily toggle between Rose Velvet Night 🌙 and Strawberry Cream 🌸 using CSS pseudo-selectors.
+- 🌓 **Theme Switcher**: Easily toggle between Rose Velvet Night 🌙 and Strawberry Cream 🌸 using CSS pseudo-selectors.
 - 🧮 **Scientific & Basic Keypad Modes**: Interactive CSS toggle switch (`BASIC` / `SCI`) to smoothly expand or hide scientific calculation keys (`sin`, `cos`, `tan`, `log`, etc.).
 - 📱 **Fully Responsive**: Built with CSS Grid and Flexbox for mobile, tablet, and desktop screens.
 
@@ -30,8 +17,7 @@ Official **Lab 01** submission for **Nawal Fateh** for the **Full Stack Web Deve
 
 ## 📁 Project Structure
 
-```text
-Nawal fateh 242211/
+Lab 1/
 ├── 📄 index.html           # Main Calculator HTML markup
 ├── 📄 style.css            # Cute pastel CSS styles & theme system
 └── 📄 README.md            # Lab 01 submission documentation
