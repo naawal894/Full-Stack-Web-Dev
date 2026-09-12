@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cute Calculator UI | Nawal Fateh (242211)</title>
+  <meta name="description" content="A cute, aesthetic pastel Calculator UI built using pure HTML5 and CSS3 for Nawal Fateh (Roll #242211).">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Theme Toggle Input (Pure CSS Cute Theme Switcher) -->
+  <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+  <!-- Mode Toggle Input (Standard vs Scientific) -->
+  <input type="checkbox" id="mode-toggle" class="mode-toggle-checkbox">
+
+  <div class="page-wrapper">
+    <!-- Header Section -->
+    <header class="header">
+      <div class="header-info">
+        <h1 class="app-title">CALCULATOR</h1>
+        <p class="student-info">Nawal Fateh &bull; Roll #242211 &bull; FSWD Lab 01</p>
+      </div>
+
+      <div class="header-controls">
+        <!-- Cute Theme Toggle Switch -->
+        <label for="theme-toggle" class="theme-switch" title="Toggle Cute Theme">
+          <span class="theme-icon sun-icon">🌸</span>
+          <span class="theme-icon moon-icon">🌙</span>
+          <span class="theme-slider"></span>
+        </label>
+      </div>
+    </header>
+
+    <!-- Main Cute Calculator Component -->
+    <main class="calculator-container">
+      <div class="calculator-card">
+        
+        <!-- Calculator Top Status Bar -->
+        <div class="calc-status-bar">
+          <div class="calc-brand">
+            <span class="brand-name">CALCULATOR</span>
+          </div>
+          <div class="mode-switch-wrapper">
+            <label for="mode-toggle" class="mode-pill" title="Toggle Scientific Mode">
+              <span class="mode-label std">BASIC</span>
+              <span class="mode-label sci">SCI</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Calculator Display Section -->
+        <section class="calc-display">
+          <div class="display-indicators">
+            <span class="indicator active">DEG</span>
+            <span class="indicator">MATH</span>
+          </div>
+          <div class="history-line">
+            <span class="history-text"></span>
+          </div>
+          <div class="main-display">
+            <span class="current-value">0</span>
+            <span class="cursor"></span>
+          </div>
+        </section>
+
+        <!-- Scientific Extension Keypad -->
+        <section class="scientific-keypad">
+          <button class="key func-key" type="button"><span class="key-label">sin</span></button>
+          <button class="key func-key" type="button"><span class="key-label">cos</span></button>
+          <button class="key func-key" type="button"><span class="key-label">tan</span></button>
+          <button class="key func-key" type="button"><span class="key-label">ln</span></button>
+          <button class="key func-key" type="button"><span class="key-label">log</span></button>
+          
+          <button class="key func-key" type="button"><span class="key-label">x²</span></button>
+          <button class="key func-key" type="button"><span class="key-label">√x</span></button>
+          <button class="key func-key" type="button"><span class="key-label">xʸ</span></button>
+          <button class="key func-key" type="button"><span class="key-label">π</span></button>
+          <button class="key func-key" type="button"><span class="key-label">( )</span></button>
+        </section>
+
+        <!-- Main Standard Keypad Grid -->
+        <section class="main-keypad">
+          <!-- Row 1 -->
+          <button class="key action-key clear-key" type="button">AC</button>
+          <button class="key action-key delete-key" type="button">⌫</button>
+          <button class="key action-key" type="button">%</button>
+          <button class="key operator-key" type="button">&divide;</button>
+
+          <!-- Row 2 -->
+          <button class="key num-key" type="button">7</button>
+          <button class="key num-key" type="button">8</button>
+          <button class="key num-key" type="button">9</button>
+          <button class="key operator-key" type="button">&times;</button>
+
+          <!-- Row 3 -->
+          <button class="key num-key" type="button">4</button>
+          <button class="key num-key" type="button">5</button>
+          <button class="key num-key" type="button">6</button>
+          <button class="key operator-key" type="button">&minus;</button>
+
+          <!-- Row 4 -->
+          <button class="key num-key" type="button">1</button>
+          <button class="key num-key" type="button">2</button>
+          <button class="key num-key" type="button">3</button>
+          <button class="key operator-key" type="button">+</button>
+
+          <!-- Row 5 -->
+          <button class="key num-key" type="button">&plusmn;</button>
+          <button class="key num-key" type="button">0</button>
+          <button class="key num-key" type="button">.</button>
+          <button class="key equals-key" type="button">=</button>
+        </section>
+
+        <!-- Footer -->
+        <footer class="calc-footer">
+          <p class="sparkle-text">Pure HTML &amp; CSS &bull; Pastel Theme</p>
+        </footer>
+
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <p>Air University &bull; CS-301L &bull; Lab 01</p>
+    </footer>
+  </div>
+</body>
+</html>
