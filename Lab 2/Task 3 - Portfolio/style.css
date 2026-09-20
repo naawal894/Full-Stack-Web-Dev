@@ -1,0 +1,506 @@
+/* ═══════════════════════════════════════════════════
+   PORTFOLIO — Nawal Fateh
+   Template-inspired layout: full-width header with
+   photo top-right, then two-column body below
+   ═══════════════════════════════════════════════════ */
+
+/* ---------- RESET & BASE ---------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --sidebar-bg: #f7f8fa;
+    --main-bg: #ffffff;
+    --accent: #2563eb;
+    --accent-light: #eff4ff;
+    --text: #1a1d23;
+    --text-secondary: #5f6368;
+    --text-dim: #9aa0a6;
+    --border: #e5e7eb;
+    --tag-bg: #f1f3f5;
+    --bar-track: #e5e7eb;
+    --bar-fill: #2563eb;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #e8eaed;
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- PORTFOLIO CONTAINER ---------- */
+.portfolio {
+    max-width: 1050px;
+    width: 100%;
+    background: var(--main-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* ═══════════════════════════════════════
+   TOP HEADER — Full width, photo top-right
+   ═══════════════════════════════════════ */
+.top-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem 2.2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+}
+
+.header-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.name {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    line-height: 1.1;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-top: 0.3rem;
+}
+
+.subtitle-role {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 0.2rem;
+}
+
+/* --- Contact row (horizontal, like template) --- */
+.contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.2rem;
+    margin-top: 0.8rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.76rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.contact-icon {
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.contact-item a {
+    color: var(--accent);
+    font-size: 0.76rem;
+}
+
+/* --- Profile Photo (top-right corner) --- */
+.header-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-left: 1.5rem;
+    background: var(--accent-light);
+    border: 2px solid var(--border);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ═══════════════════════════════════════
+   TWO-COLUMN BODY
+   ═══════════════════════════════════════ */
+.body-columns {
+    display: flex;
+}
+
+/* ═══════════════════════════════════════
+   LEFT SIDEBAR
+   ═══════════════════════════════════════ */
+.sidebar {
+    width: 310px;
+    flex-shrink: 0;
+    background: var(--sidebar-bg);
+    padding: 1.5rem 1.6rem;
+    border-right: 1px solid var(--border);
+}
+
+/* --- Sidebar Section --- */
+.sidebar-section {
+    margin-top: 1.3rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--border);
+}
+
+.sidebar-section:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 0.7rem;
+}
+
+/* --- Skill Categories --- */
+.skill-category {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 0.75rem;
+    margin-bottom: 0.35rem;
+}
+
+.skill-category:first-of-type {
+    margin-top: 0;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: var(--tag-bg);
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--text);
+    border-bottom: 2px solid var(--border);
+}
+
+/* --- Expertise Bars --- */
+.expertise-item {
+    margin-bottom: 0.65rem;
+}
+
+.expertise-name {
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 0.2rem;
+    display: block;
+}
+
+.bar-track {
+    width: 100%;
+    height: 6px;
+    background: var(--bar-track);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: var(--bar-fill);
+    border-radius: 3px;
+}
+
+/* ═══════════════════════════════════════
+   MAIN CONTENT (right side)
+   ═══════════════════════════════════════ */
+.main-content {
+    flex: 1;
+    padding: 1.5rem 2rem;
+    min-width: 0;
+}
+
+/* --- Section Heading --- */
+.section-heading {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 0.9rem;
+}
+
+.content-section {
+    margin-bottom: 1.8rem;
+}
+
+.content-section:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Summary --- */
+.summary-text {
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+/* --- Experience --- */
+.exp-item {
+    margin-bottom: 1.3rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.exp-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.exp-title {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.exp-company {
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-top: 0.1rem;
+}
+
+.exp-date {
+    font-size: 0.73rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.exp-bullets {
+    list-style: disc;
+    padding-left: 1.2rem;
+    margin-top: 0.3rem;
+}
+
+.exp-bullets li {
+    font-size: 0.8rem;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 0.15rem;
+}
+
+/* --- Education --- */
+.edu-item {
+    margin-bottom: 0.9rem;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.edu-degree {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.edu-school {
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-top: 0.1rem;
+}
+
+.edu-date {
+    font-size: 0.73rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.edu-detail {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 0.15rem;
+}
+
+.edu-courses {
+    font-size: 0.78rem;
+    color: var(--text);
+    margin-top: 0.25rem;
+    line-height: 1.5;
+}
+
+/* --- Projects --- */
+.project-item {
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.project-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.project-title {
+    font-size: 0.93rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.project-date {
+    font-size: 0.73rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.project-link {
+    font-size: 0.73rem;
+    color: var(--text-dim);
+    margin-top: 0.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.project-bullets {
+    list-style: disc;
+    padding-left: 1.2rem;
+}
+
+.project-bullets li {
+    font-size: 0.8rem;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 0.15rem;
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media (max-width: 800px) {
+    .body-columns {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .top-header {
+        padding: 1.5rem 1.2rem 1.2rem;
+    }
+
+    .header-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .contact-row {
+        gap: 0.3rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+
+    .portfolio {
+        border-radius: 0;
+    }
+
+    .name {
+        font-size: 1.3rem;
+    }
+
+    .header-photo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .exp-header,
+    .edu-header,
+    .project-header {
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
+    .sidebar {
+        padding: 1.2rem;
+    }
+
+    .main-content {
+        padding: 1.2rem;
+    }
+}
+
+/* ---------- PRINT ---------- */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .portfolio {
+        box-shadow: none;
+        border-radius: 0;
+    }
+}

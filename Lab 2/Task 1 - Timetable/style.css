@@ -1,0 +1,403 @@
+/* ═══════════════════════════════════════════════════
+   TIMETABLE STYLES — BSCS-V-B (Shift-I)
+   Clean, professional, light institutional design
+   ═══════════════════════════════════════════════════ */
+
+/* ---------- RESET & BASE ---------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Surface */
+    --bg: #f4f5f7;
+    --surface: #ffffff;
+    --border: #d9dce1;
+    --border-light: #e8eaed;
+
+    /* Text */
+    --text: #1a1d23;
+    --text-muted: #5f6368;
+    --text-dim: #9aa0a6;
+
+    /* Course palette — soft, muted tones */
+    --web-dev: #1a73e8;
+    --web-dev-bg: #e8f0fe;
+    --math: #e37400;
+    --math-bg: #fef3e0;
+    --ai: #0d7377;
+    --ai-bg: #e0f3f4;
+    --daa: #7b1fa2;
+    --daa-bg: #f3e5f5;
+    --os: #c62828;
+    --os-bg: #fce8e6;
+    --mgmt: #2e7d32;
+    --mgmt-bg: #e6f4ea;
+    --lab: #e65100;
+    --lab-bg: #fff3e0;
+
+    /* Day sidebar accents */
+    --monday: #1a73e8;
+    --tuesday: #c62828;
+    --wednesday: #7b1fa2;
+    --thursday: #e37400;
+    --friday: #2e7d32;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+/* ---------- CONTAINER ---------- */
+.container {
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* ---------- HEADER ---------- */
+.header {
+    text-align: center;
+    margin-bottom: 1.8rem;
+}
+
+.header-badge {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border-radius: 100px;
+    background: var(--web-dev-bg);
+    color: var(--web-dev);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.6rem;
+    border: 1px solid #d2e3fc;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.header .highlight {
+    color: var(--web-dev);
+}
+
+.header .subtitle {
+    margin-top: 0.3rem;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    font-weight: 400;
+}
+
+/* ---------- TABLE WRAPPER ---------- */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* ---------- TABLE ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1100px;
+    table-layout: fixed;
+}
+
+/* ---------- HEADER ROW ---------- */
+thead th {
+    padding: 0.85rem 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-align: center;
+    background: #f8f9fa;
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+thead th span {
+    display: block;
+    font-weight: 400;
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    margin-top: 1px;
+}
+
+thead th.day-col {
+    width: 90px;
+    text-align: center;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* ---------- BODY CELLS ---------- */
+tbody td {
+    border: 1px solid var(--border-light);
+    padding: 0.55rem 0.45rem;
+    vertical-align: top;
+    text-align: center;
+    height: 105px;
+    transition: background 0.15s ease;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover td.empty {
+    background: #fafbfc;
+}
+
+/* ---------- DAY CELL ---------- */
+.day-cell {
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center !important;
+    vertical-align: middle !important;
+    position: relative;
+    width: 90px;
+    background: #f8f9fa;
+    border-left: none !important;
+}
+
+.day-cell::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    border-radius: 0 2px 2px 0;
+}
+
+.day-cell.monday::before  { background: var(--monday); }
+.day-cell.tuesday::before { background: var(--tuesday); }
+.day-cell.wednesday::before { background: var(--wednesday); }
+.day-cell.thursday::before { background: var(--thursday); }
+.day-cell.friday::before  { background: var(--friday); }
+
+.day-cell.monday  { color: var(--monday); }
+.day-cell.tuesday { color: var(--tuesday); }
+.day-cell.wednesday { color: var(--wednesday); }
+.day-cell.thursday { color: var(--thursday); }
+.day-cell.friday  { color: var(--friday); }
+
+.day-short {
+    display: none;
+}
+
+.day-full {
+    display: block;
+}
+
+/* ---------- EMPTY CELL ---------- */
+.empty {
+    background: var(--surface);
+}
+
+/* ---------- COURSE CELLS ---------- */
+.course {
+    position: relative;
+    transition: box-shadow 0.15s ease;
+}
+
+.course:hover {
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.course-name {
+    font-weight: 600;
+    font-size: 0.76rem;
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+}
+
+.teacher {
+    font-size: 0.64rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 0.2rem;
+    line-height: 1.3;
+}
+
+.room {
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+/* --- Lab badge --- */
+.lab-badge {
+    display: inline-block;
+    padding: 0.12rem 0.45rem;
+    border-radius: 3px;
+    font-size: 0.58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.35rem;
+    background: #fff3e0;
+    color: var(--lab);
+    border: 1px solid #ffe0b2;
+}
+
+/* ---------- COURSE COLORS ---------- */
+.web-dev {
+    background: var(--web-dev-bg);
+    border-left: 3px solid var(--web-dev) !important;
+}
+.web-dev .course-name { color: var(--web-dev); }
+
+.math {
+    background: var(--math-bg);
+    border-left: 3px solid var(--math) !important;
+}
+.math .course-name { color: var(--math); }
+
+.ai {
+    background: var(--ai-bg);
+    border-left: 3px solid var(--ai) !important;
+}
+.ai .course-name { color: var(--ai); }
+
+.daa {
+    background: var(--daa-bg);
+    border-left: 3px solid var(--daa) !important;
+}
+.daa .course-name { color: var(--daa); }
+
+.os {
+    background: var(--os-bg);
+    border-left: 3px solid var(--os) !important;
+}
+.os .course-name { color: var(--os); }
+
+.mgmt {
+    background: var(--mgmt-bg);
+    border-left: 3px solid var(--mgmt) !important;
+}
+.mgmt .course-name { color: var(--mgmt); }
+
+/* Lab overrides */
+.lab.ai-lab {
+    background: var(--ai-bg);
+    border-left: 3px solid var(--ai) !important;
+}
+.lab.ai-lab .course-name { color: var(--ai); }
+
+.lab.os-lab {
+    background: var(--os-bg);
+    border-left: 3px solid var(--os) !important;
+}
+.lab.os-lab .course-name { color: var(--os); }
+
+.lab.web-lab {
+    background: var(--web-dev-bg);
+    border-left: 3px solid var(--web-dev) !important;
+}
+.lab.web-lab .course-name { color: var(--web-dev); }
+
+/* ---------- FOOTER ---------- */
+.footer {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.web-dev-dot { background: var(--web-dev); }
+.math-dot    { background: var(--math); }
+.ai-dot      { background: var(--ai); }
+.daa-dot     { background: var(--daa); }
+.os-dot      { background: var(--os); }
+.mgmt-dot    { background: var(--mgmt); }
+.lab-dot     { background: var(--lab); }
+
+.gen-date {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .day-short {
+        display: block;
+    }
+
+    .day-full {
+        display: none;
+    }
+
+    .day-cell {
+        width: 50px;
+        font-size: 0.82rem;
+    }
+
+    thead th.day-col {
+        width: 50px;
+    }
+
+    tbody td {
+        height: 85px;
+        padding: 0.35rem 0.25rem;
+    }
+
+    .course-name {
+        font-size: 0.66rem;
+    }
+
+    .teacher {
+        font-size: 0.56rem;
+    }
+
+    .room {
+        font-size: 0.52rem;
+    }
+}
