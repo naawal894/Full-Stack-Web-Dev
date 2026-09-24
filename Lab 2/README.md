@@ -16,6 +16,7 @@
 | 2 | Facebook Homepage | Facebook news feed page replica using HTML & CSS | [Task 2 - Facebook](./Task%202%20-%20Facebook/) |
 | 3 | Portfolio | Personal portfolio/resume page | [Task 3 - Portfolio](./Task%203%20-%20Portfolio/) |
 | 4 | IEEE Paper Template | IEEE conference paper layout in HTML & CSS | [Task 4 - IEEE Paper](./Task%204%20-%20IEEE%20Paper/) |
+| 5 | Netflix Landing Page (Custom UI) | Netflix homepage clone with showcase sections, media overlays & FAQ | [Task 5 - CustomUI](./Task%205%20-%20CustomUI/) |
 
 ---
 
@@ -29,6 +30,6 @@
 
 ## Technologies Used
 
-- **HTML5** — Semantic markup and structure
-- **CSS3** — Styling, layouts (Flexbox, CSS Grid, multi-column), responsive design
-- **Google Fonts** — Inter typeface (Tasks 1–3)
+- **HTML5** — Semantic markup, embedded video elements, and structural components
+- **CSS3** — Styling, layouts (Flexbox, CSS Grid, multi-column), media overlays, responsive design
+- **Google Fonts** — Inter (Tasks 1–3), Poppins & Martel Sans (Task 5)
