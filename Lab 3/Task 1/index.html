@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 — Task 1 Dashboard (Bootstrap Tasks)</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        .task-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .task-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important; }
+    </style>
+</head>
+<body class="py-5">
+
+    <div class="container">
+        <!-- Header -->
+        <div class="text-center mb-5">
+            <span class="badge bg-primary px-3 py-2 rounded-pill text-uppercase mb-2">Air University &bull; Fall 2026</span>
+            <h1 class="display-5 fw-bold mb-2">Lab 3 — Task 1</h1>
+            <p class="lead text-secondary mb-1">Modify all tasks of Lab 2 and implement them using Bootstrap</p>
+            <p class="text-muted small">Student: <strong>Nawal Fateh</strong> &bull; Section: <strong>BSCS-V-B (Shift-I)</strong></p>
+        </div>
+
+        <!-- Task Grid -->
+        <div class="row g-4">
+
+            <!-- Task 1: Timetable -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm rounded-3 p-4 task-card">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1">Task 1</span>
+                        <span class="fs-4">📅</span>
+                    </div>
+                    <h5 class="card-title fw-bold">Class Timetable</h5>
+                    <p class="card-text text-secondary small">
+                        Air University BSCS-V-B weekly timetable recreated using Bootstrap's responsive table, containers, and badges.
+                    </p>
+                    <a href="./Task 1 - Timetable/index.html" class="btn btn-outline-primary mt-auto">Open Timetable &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Task 2: Facebook -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm rounded-3 p-4 task-card">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1">Task 2</span>
+                        <span class="fs-4">👥</span>
+                    </div>
+                    <h5 class="card-title fw-bold">Facebook Homepage</h5>
+                    <p class="card-text text-secondary small">
+                        Facebook news feed replica utilizing Bootstrap 5 fixed navbar, 3-column responsive grid, and feed cards.
+                    </p>
+                    <a href="./Task 2 - Facebook/index.html" class="btn btn-outline-primary mt-auto">Open Facebook &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Task 3: Portfolio -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm rounded-3 p-4 task-card">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1">Task 3</span>
+                        <span class="fs-4">💼</span>
+                    </div>
+                    <h5 class="card-title fw-bold">Personal Portfolio</h5>
+                    <p class="card-text text-secondary small">
+                        Developer resume layout transformed with Bootstrap grid, skill tags, native progress bars, and responsive columns.
+                    </p>
+                    <a href="./Task 3 - Portfolio/index.html" class="btn btn-outline-primary mt-auto">Open Portfolio &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Task 4: IEEE Paper -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm rounded-3 p-4 task-card">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1">Task 4</span>
+                        <span class="fs-4">📄</span>
+                    </div>
+                    <h5 class="card-title fw-bold">IEEE Paper Template</h5>
+                    <p class="card-text text-secondary small">
+                        Academic conference paper survey on AI in Software Engineering, styled with Bootstrap tables and responsive container.
+                    </p>
+                    <a href="./Task 4 - IEEE Paper/index.html" class="btn btn-outline-primary mt-auto">Open IEEE Paper &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Task 5: CustomUI -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm rounded-3 p-4 task-card">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle px-2 py-1">Task 5</span>
+                        <span class="fs-4">🎬</span>
+                    </div>
+                    <h5 class="card-title fw-bold">Netflix Landing Page</h5>
+                    <p class="card-text text-secondary small">
+                        Netflix homepage clone featuring embedded video screens, alternating showcase rows, FAQ, and 4-column footer grid.
+                    </p>
+                    <a href="./Task 5 - CustomUI/index.html" class="btn btn-outline-danger mt-auto">Open Netflix UI &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Task 2 Ecom Store Shortcut -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm rounded-3 p-4 task-card bg-dark text-white">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="badge bg-light text-dark px-2 py-1">Lab 3 Task 2</span>
+                        <span class="fs-4">🛍️</span>
+                    </div>
+                    <h5 class="card-title fw-bold">ETHNC E-Commerce Store</h5>
+                    <p class="card-text text-white-50 small">
+                        Complete ethnic prêt fashion store with product detail, cart, and checkout flow (NO JavaScript).
+                    </p>
+                    <a href="../Task 2 - EcomStore/index.html" class="btn btn-light mt-auto">Open Store &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-secondary small mt-5 pt-4 border-top">
+            Full Stack Web Development &bull; Air University Islamabad &bull; Fall 2026
+        </div>
+    </div>
+
+</body>
+</html>

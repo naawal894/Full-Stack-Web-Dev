@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ETHNC - Pakistan's premier ethnic fashion destination. Shop Eastern Pret, Unstitched, Western & more.">
+  <title>ETHNC — Discover Your Style</title>
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══════ Announcement Bar ══════ -->
+  <div class="announcement-bar" id="announcement-bar">
+    <span class="announcement-text">
+      CASH ON DELIVERY IS AVAILABLE FOR ORDERS UP TO RS. 25,000 &nbsp;&bull;&nbsp; FREE SHIPPING ON ALL PREPAID ORDERS IN PAKISTAN &nbsp;&bull;&nbsp; EASY 7-DAY RETURNS &nbsp;&bull;&nbsp; CASH ON DELIVERY IS AVAILABLE FOR ORDERS UP TO RS. 25,000 &nbsp;&bull;&nbsp; FREE SHIPPING ON ALL PREPAID ORDERS IN PAKISTAN
+    </span>
+  </div>
+
+  <!-- ══════ Main Header ══════ -->
+  <header class="main-header">
+    <div class="header-top">
+      <!-- Hamburger (mobile) -->
+      <div class="header-hamburger d-md-none" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Left spacer for desktop -->
+      <div class="d-none d-md-block" style="width: 200px;"></div>
+
+      <!-- Brand Logo -->
+      <div class="brand-logo">
+        <a href="index.html">ETHNC</a>
+      </div>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="#" class="search-link d-none d-md-inline" id="search-link"><i class="bi bi-search"></i> Search</a>
+        <a href="login.html" id="login-link">Login</a>
+        <a href="cart.html" id="Cart-link">Cart <span class="cart-count">3</span></a>
+      </div>
+    </div>
+
+    <!-- Category Navigation -->
+    <nav class="category-nav d-none d-md-block">
+      <ul>
+        <li><a href="index.html" class="active" id="nav-view-all">View All</a></li>
+        <li><a href="#" id="nav-eastern-pret">Eastern Pret</a></li>
+        <li><a href="#" id="nav-unstitched">Unstitched</a></li>
+        <li><a href="#" id="nav-western">Western</a></li>
+        <li><a href="#" id="nav-east-west">East Meets West</a></li>
+        <li><a href="#" id="nav-footwear">Footwear</a></li>
+        <li><a href="#" id="nav-accessories">Accessories</a></li>
+        <li><a href="#" id="nav-fragrances">Fragrances</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title font-heading letter-space-4 text-upper">ETHNC</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-unstyled">
+        <li class="mb-3"><a href="index.html" class="text-dark text-uppercase small fw-medium" style="letter-spacing:1.5px">View All</a></li>
+        <li class="mb-3"><a href="#" class="text-dark text-uppercase small fw-medium" style="letter-spacing:1.5px">Eastern Pret</a></li>
+        <li class="mb-3"><a href="#" class="text-dark text-uppercase small fw-medium" style="letter-spacing:1.5px">Unstitched</a></li>
+        <li class="mb-3"><a href="#" class="text-dark text-uppercase small fw-medium" style="letter-spacing:1.5px">Western</a></li>
+        <li class="mb-3"><a href="#" class="text-dark text-uppercase small fw-medium" style="letter-spacing:1.5px">East Meets West</a></li>
+        <li class="mb-3"><a href="#" class="text-dark text-uppercase small fw-medium" style="letter-spacing:1.5px">Footwear</a></li>
+        <li class="mb-3"><a href="#" class="text-dark text-uppercase small fw-medium" style="letter-spacing:1.5px">Accessories</a></li>
+        <li class="mb-3"><a href="#" class="text-dark text-uppercase small fw-medium" style="letter-spacing:1.5px">Fragrances</a></li>
+      </ul>
+      <hr>
+      <ul class="list-unstyled">
+        <li class="mb-3"><a href="login.html" class="text-dark small">Login</a></li>
+        <li class="mb-3"><a href="signup.html" class="text-dark small">Create Account</a></li>
+        <li class="mb-3"><a href="cart.html" class="text-dark small">Cart</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════ Hero Section ══════ -->
+  <section class="hero-section" id="hero-section">
+    <img src="images/hero-banner.jpg" alt="ETHNC — The Royal Embrace Collection" id="hero-img">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <span class="hero-brand-tag">ETHNC COUTURE</span>
+        <p class="hero-subtitle">New Season '26</p>
+        <h1>The Royal Embrace</h1>
+        <p class="hero-desc">Exquisite hand-embroidered heritage couture. Discover timeless Pakistani craftsmanship.</p>
+        <a href="#products" class="btn-shop" id="hero-shop-btn">Shop Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ Features Strip ══════ -->
+  <section class="features-strip">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6 col-md-3">
+          <div class="feature-item">
+            <div class="feature-icon">🚚</div>
+            <h6>Free Shipping</h6>
+            <p>On prepaid orders</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="feature-item">
+            <div class="feature-icon">💳</div>
+            <h6>COD Available</h6>
+            <p>Up to Rs. 25,000</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="feature-item">
+            <div class="feature-icon">↩️</div>
+            <h6>Easy Returns</h6>
+            <p>7-day return policy</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="feature-item">
+            <div class="feature-icon">✨</div>
+            <h6>Premium Quality</h6>
+            <p>Hand-crafted pieces</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ New Arrivals / Product Listing ══════ -->
+  <section id="products">
+    <div class="section-title">
+      <h2>New Arrivals</h2>
+      <p>Curated pieces from our latest collections</p>
+    </div>
+
+    <!-- View Controls -->
+    <div class="view-controls d-none d-md-flex">
+      <span class="view-btn active" id="view-2col">▥</span>
+      <span class="view-btn" id="view-3col">▦</span>
+      <span class="filter-btn" id="filter-btn">Filters</span>
+    </div>
+
+    <!-- Product Grid using Bootstrap Row/Col -->
+    <div class="product-grid">
+      <div class="row g-3 g-md-4" id="product-grid">
+
+        <!-- Product 1 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card" id="product-1">
+            <div class="product-image-wrapper">
+              <a href="product-detail.html">
+                <img src="images/product-1.jpg" alt="Embroidered Maroon Suit" loading="lazy">
+              </a>
+              <span class="product-badge">-50%</span>
+              <a href="product-detail.html" class="quick-add" title="View & Add to Cart">+</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="product-detail.html">Embroidered Suit</a></p>
+              <p class="product-price">
+                <span class="original-price">PKR 5,990</span>
+                <span class="sale-price">PKR 2,990</span>
+                <span class="sale-badge">-50%</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card" id="product-2">
+            <div class="product-image-wrapper">
+              <a href="product-detail.html">
+                <img src="images/product-2.jpg" alt="Teal Embroidered Kurta" loading="lazy">
+              </a>
+              <span class="product-badge">-40%</span>
+              <a href="product-detail.html" class="quick-add" title="View & Add to Cart">+</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="product-detail.html">Embroidered Kurta</a></p>
+              <p class="product-price">
+                <span class="original-price">PKR 6,990</span>
+                <span class="sale-price">PKR 4,190</span>
+                <span class="sale-badge">-40%</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card" id="product-3">
+            <div class="product-image-wrapper">
+              <a href="product-detail.html">
+                <img src="images/product-3.jpg" alt="Navy Chiffon Formal Suit" loading="lazy">
+              </a>
+              <a href="product-detail.html" class="quick-add" title="View & Add to Cart">+</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="product-detail.html">Chiffon Formal Suit</a></p>
+              <p class="product-price">PKR 8,490</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card" id="product-4">
+            <div class="product-image-wrapper">
+              <a href="product-detail.html">
+                <img src="images/product-4.jpg" alt="Cotton Pink Kurta" loading="lazy">
+              </a>
+              <span class="product-badge">-50%</span>
+              <a href="product-detail.html" class="quick-add" title="View & Add to Cart">+</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="product-detail.html">Cotton Kurta</a></p>
+              <p class="product-price">
+                <span class="original-price">PKR 4,990</span>
+                <span class="sale-price">PKR 2,490</span>
+                <span class="sale-badge">-50%</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card" id="product-5">
+            <div class="product-image-wrapper">
+              <a href="product-detail.html">
+                <img src="images/product-5.jpg" alt="Unstitched Lawn 3-Piece" loading="lazy">
+              </a>
+              <a href="product-detail.html" class="quick-add" title="View & Add to Cart">+</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="product-detail.html">Unstitched Lawn 3PC</a></p>
+              <p class="product-price">PKR 3,990</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card" id="product-6">
+            <div class="product-image-wrapper">
+              <a href="product-detail.html">
+                <img src="images/product-6.jpg" alt="Festive Emerald Suit" loading="lazy">
+              </a>
+              <span class="product-badge">New</span>
+              <a href="product-detail.html" class="quick-add" title="View & Add to Cart">+</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="product-detail.html">Festive Suit</a></p>
+              <p class="product-price">PKR 9,990</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card" id="product-7">
+            <div class="product-image-wrapper">
+              <a href="product-detail.html">
+                <img src="images/product-7.jpg" alt="White Chikankari Kurta" loading="lazy">
+              </a>
+              <a href="product-detail.html" class="quick-add" title="View & Add to Cart">+</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="product-detail.html">Chikankari Kurta</a></p>
+              <p class="product-price">PKR 4,490</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card" id="product-8">
+            <div class="product-image-wrapper">
+              <a href="product-detail.html">
+                <img src="images/product-8.jpg" alt="Black Embroidered Suit" loading="lazy">
+              </a>
+              <span class="product-badge">-50%</span>
+              <a href="product-detail.html" class="quick-add" title="View & Add to Cart">+</a>
+            </div>
+            <div class="product-info">
+              <p class="product-name"><a href="product-detail.html">Embroidered Suit</a></p>
+              <p class="product-price">
+                <span class="original-price">PKR 6,990</span>
+                <span class="sale-price">PKR 3,490</span>
+                <span class="sale-badge">-50%</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ Category Banners ══════ -->
+  <section class="category-banners">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <a href="#" class="d-block" id="banner-eastern">
+          <div class="category-banner">
+            <img src="images/product-1.jpg" alt="Shop Eastern Pret">
+            <div class="banner-label">Eastern Pret</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a href="#" class="d-block" id="banner-western">
+          <div class="category-banner">
+            <img src="images/product-7.jpg" alt="Shop Western">
+            <div class="banner-label">Western</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ Reviews Section ══════ -->
+  <section class="reviews-section" id="reviews-section">
+    <div class="container-fluid px-0">
+      <div class="section-title" style="padding-top: 0;">
+        <h2>What Our Customers Say</h2>
+        <p>Real reviews from real people</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Review 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="review-card" id="review-1">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Absolutely stunning quality! The embroidery work on my festive suit was beyond expectations. The fabric is so luxurious — received so many compliments at the wedding."</p>
+            <p class="review-author">Ayesha K.</p>
+            <p class="review-date">Verified Purchase — Aug 2026</p>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="review-card" id="review-2">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Fast delivery and the stitching quality is top-notch. Ordered 3 kurtas and all fit perfectly. ETHNC never disappoints — my go-to brand for Eastern wear."</p>
+            <p class="review-author">Fatima R.</p>
+            <p class="review-date">Verified Purchase — Sep 2026</p>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="review-card" id="review-3">
+            <div class="review-stars">★★★★☆</div>
+            <p class="review-text">"Love the minimalist designs. The cotton kurta is so comfortable for daily wear. Only wish they had more color options. Will definitely order again!"</p>
+            <p class="review-author">Hira M.</p>
+            <p class="review-date">Verified Purchase — Jul 2026</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ Newsletter ══════ -->
+  <section class="newsletter-section" id="newsletter-section">
+    <h3>Stay in the Loop</h3>
+    <p>Subscribe for exclusive drops, early access & member-only offers.</p>
+    <form class="newsletter-form" id="newsletter-form">
+      <input type="email" placeholder="Enter your email address" required id="newsletter-email">
+      <button type="submit" id="newsletter-submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- ══════ Footer ══════ -->
+  <footer class="site-footer">
+    <div class="container-fluid">
+      <div class="row g-4">
+        <!-- Brand Column -->
+        <div class="col-md-4">
+          <div class="footer-brand">ETHNC</div>
+          <p class="footer-tagline">Celebrating the art of Pakistani fashion. Timeless designs crafted with love, heritage & modern sensibility.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-6 col-md-2">
+          <h6 class="footer-heading">Shop</h6>
+          <ul class="footer-links">
+            <li><a href="#">Eastern Pret</a></li>
+            <li><a href="#">Unstitched</a></li>
+            <li><a href="#">Western</a></li>
+            <li><a href="#">Footwear</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+
+        <!-- Help -->
+        <div class="col-6 col-md-2">
+          <h6 class="footer-heading">Help</h6>
+          <ul class="footer-links">
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns & Exchange</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div class="col-6 col-md-2">
+          <h6 class="footer-heading">Company</h6>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Store Locator</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div class="col-6 col-md-2">
+          <h6 class="footer-heading">Follow Us</h6>
+          <div class="footer-social flex-column">
+            <a href="#"><i class="bi bi-instagram"></i> Instagram</a>
+            <a href="#"><i class="bi bi-facebook"></i> Facebook</a>
+            <a href="#"><i class="bi bi-tiktok"></i> TikTok</a>
+            <a href="#"><i class="bi bi-youtube"></i> YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 ETHNC. All rights reserved. Designed with ♥ in Pakistan.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

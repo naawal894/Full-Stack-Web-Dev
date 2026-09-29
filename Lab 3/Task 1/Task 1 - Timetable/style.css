@@ -1,0 +1,163 @@
+/* ═══════════════════════════════════════════════════
+   TIMETABLE CUSTOM STYLES — BSCS-V-B (Shift-I)
+   Only styles that Bootstrap 5.3 cannot provide natively:
+   - Course-specific pastel palettes & accent badges
+   - Day indicator accent borders
+   - Fixed-column timetable grid geometry
+   ═══════════════════════════════════════════════════ */
+
+:root {
+    /* Custom Course Palette */
+    --web-dev: #1a73e8;
+    --web-dev-bg: #e8f0fe;
+    --math: #e37400;
+    --math-bg: #fef3e0;
+    --ai: #0d7377;
+    --ai-bg: #e0f3f4;
+    --daa: #7b1fa2;
+    --daa-bg: #f3e5f5;
+    --os: #c62828;
+    --os-bg: #fce8e6;
+    --mgmt: #2e7d32;
+    --mgmt-bg: #e6f4ea;
+    --lab: #e65100;
+    --lab-bg: #fff3e0;
+
+    /* Day Accents */
+    --monday: #1a73e8;
+    --tuesday: #c62828;
+    --wednesday: #7b1fa2;
+    --thursday: #e37400;
+    --friday: #2e7d32;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Fixed Layout Table for Consistent Column Widths */
+.table-wrapper table {
+    min-width: 1100px;
+    table-layout: fixed;
+}
+
+thead th {
+    font-size: 0.78rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #f8f9fa;
+}
+
+thead th span {
+    font-size: 0.68rem;
+    color: #6c757d;
+}
+
+thead th.day-col {
+    width: 90px;
+    letter-spacing: 0.06em;
+}
+
+/* Table Cells */
+tbody td {
+    height: 105px;
+    vertical-align: top;
+    font-size: 0.8rem;
+}
+
+/* Day Cell & Color Bars */
+.day-cell {
+    width: 90px;
+    font-weight: 700;
+    position: relative;
+    background-color: #f8f9fa !important;
+}
+
+.day-cell::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 4px;
+    border-radius: 0 2px 2px 0;
+}
+
+.day-cell.monday::before  { background: var(--monday); }
+.day-cell.tuesday::before { background: var(--tuesday); }
+.day-cell.wednesday::before { background: var(--wednesday); }
+.day-cell.thursday::before { background: var(--thursday); }
+.day-cell.friday::before  { background: var(--friday); }
+
+.day-cell.monday  { color: var(--monday); }
+.day-cell.tuesday { color: var(--tuesday); }
+.day-cell.wednesday { color: var(--wednesday); }
+.day-cell.thursday { color: var(--thursday); }
+.day-cell.friday  { color: var(--friday); }
+
+/* Course Cell Typography */
+.course {
+    transition: box-shadow 0.15s ease;
+}
+
+.course:hover {
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1), 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.course-name {
+    font-weight: 600;
+    font-size: 0.76rem;
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
+}
+
+.teacher {
+    font-size: 0.65rem;
+    color: #6c757d;
+    margin-bottom: 0.2rem;
+}
+
+.room {
+    font-size: 0.62rem;
+    color: #8c9096;
+    font-weight: 500;
+}
+
+/* Course Theme Colors */
+.course.web-dev { background: var(--web-dev-bg); color: #0d47a1; }
+.course.math    { background: var(--math-bg);    color: #b25900; }
+.course.ai      { background: var(--ai-bg);      color: #004d40; }
+.course.daa     { background: var(--daa-bg);     color: #4a148c; }
+.course.os      { background: var(--os-bg);      color: #b71c1c; }
+.course.mgmt    { background: var(--mgmt-bg);    color: #1b5e20; }
+.course.lab     { background: var(--lab-bg);     color: #bf360c; }
+
+/* Lab Badge */
+.lab-badge {
+    display: inline-block;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    background: #e65100;
+    color: #fff;
+    font-size: 0.58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+/* Legend Dots */
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+.web-dev-dot { background: var(--web-dev); }
+.math-dot    { background: var(--math); }
+.ai-dot      { background: var(--ai); }
+.daa-dot     { background: var(--daa); }
+.os-dot      { background: var(--os); }
+.mgmt-dot    { background: var(--mgmt); }
+.lab-dot     { background: var(--lab); }
