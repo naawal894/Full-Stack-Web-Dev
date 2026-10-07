@@ -24,8 +24,8 @@
 .bg-circle {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.25;
+    filter: blur(100px);
+    opacity: 0.08; /* Very subtle ambient light */
     animation: floatCircle 20s ease-in-out infinite;
 }
 
