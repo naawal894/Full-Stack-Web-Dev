@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ConnecFriend Profile - View and manage your profile information.">
+    <title>ConnecFriend &bull; Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/profile.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar (Same as home) -->
+    <nav class="navbar navbar-expand-lg navbar-dark glass-navbar fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand brand-nav" href="home.html">
+                <i class="bi bi-people-fill me-2"></i>ConnecFriend
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <form class="d-flex mx-auto my-2 my-lg-0 nav-search-form" id="searchForm" onsubmit="return false;">
+                    <div class="input-group">
+                        <span class="input-group-text glass-input border-end-0"><i class="bi bi-search"></i></span>
+                        <input type="search" class="form-control glass-input border-start-0" id="userSearch" placeholder="Search people..." autocomplete="off">
+                    </div>
+                    <div class="search-results-dropdown d-none" id="searchResults"></div>
+                </form>
+                <ul class="navbar-nav ms-auto align-items-center gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html" id="navHome"><i class="bi bi-house-door-fill me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html" id="navProfile"><i class="bi bi-person-fill me-1"></i>Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="messages.html" id="navMessages">
+                            <i class="bi bi-chat-dots-fill me-1"></i>Messages
+                            <span class="badge bg-danger rounded-pill msg-badge d-none" id="msgBadge">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <img src="" alt="avatar" class="nav-avatar rounded-circle" id="navAvatar" width="28" height="28">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end glass-dropdown">
+                            <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person me-2"></i>My Profile</a></li>
+                            <li><a class="dropdown-item text-warning" href="#" id="resetDataBtn"><i class="bi bi-arrow-counterclockwise me-2"></i>Reset Demo Data</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#" id="logoutBtn"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Content -->
+    <div class="container main-content">
+        <!-- Profile Header / Cover -->
+        <div class="glass-card profile-header-card mb-4 overflow-hidden">
+            <div class="profile-cover" id="profileCover"></div>
+            <div class="profile-header-body p-4">
+                <div class="d-flex flex-column flex-md-row align-items-center gap-3">
+                    <div class="profile-avatar-wrapper">
+                        <img src="" alt="avatar" class="rounded-circle profile-avatar" id="profileAvatar" width="120" height="120">
+                        <span class="online-dot" id="profileOnlineDot"></span>
+                    </div>
+                    <div class="text-center text-md-start flex-grow-1">
+                        <h2 class="fw-bold mb-0" id="profileFullName"></h2>
+                        <p class="text-muted mb-1" id="profileUsernameDisplay"></p>
+                        <p class="mb-0 small" id="profileBio"></p>
+                    </div>
+                    <div class="d-flex gap-2" id="profileActions">
+                        <!-- Populated by JS: Add Friend / Message / Rate buttons -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Left Column - Personal Info & Friends -->
+            <div class="col-lg-4">
+                <!-- Personal Info Card -->
+                <div class="glass-card p-4 mb-4">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-info-circle-fill me-2 text-info"></i>About</h5>
+                    <ul class="list-unstyled mb-0 profile-info-list">
+                        <li><i class="bi bi-geo-alt-fill text-danger me-2"></i><span id="profileLocation">-</span></li>
+                        <li><i class="bi bi-briefcase-fill text-primary me-2"></i><span id="profileWork">-</span></li>
+                        <li><i class="bi bi-mortarboard-fill text-success me-2"></i><span id="profileEducation">-</span></li>
+                        <li><i class="bi bi-calendar-event-fill text-warning me-2"></i>Joined <span id="profileJoined">-</span></li>
+                    </ul>
+                </div>
+
+                <!-- Friends List Card -->
+                <div class="glass-card p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="fw-bold mb-0"><i class="bi bi-people-fill me-2 text-primary"></i>Friends</h5>
+                        <span class="badge bg-primary rounded-pill" id="profileFriendCount">0</span>
+                    </div>
+                    <div class="row g-2" id="profileFriendsList">
+                        <!-- Loaded by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Posts -->
+            <div class="col-lg-8">
+                <div class="glass-card p-4 mb-4">
+                    <h5 class="fw-bold mb-0"><i class="bi bi-grid-fill me-2 text-primary"></i>Posts</h5>
+                </div>
+                <div id="profilePosts">
+                    <!-- Loaded by JS -->
+                </div>
+                <div id="profilePostsEmpty" class="text-center py-5 d-none">
+                    <i class="bi bi-journal-text display-1 text-muted"></i>
+                    <p class="text-muted mt-3">No posts yet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rate Friend Modal -->
+    <div class="modal fade" id="rateFriendModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content glass-card border-0">
+                <div class="modal-header border-0 pb-1">
+                    <h5 class="modal-title fw-bold">Rate Friend</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="small text-muted mb-3">How would you rate <strong id="rateFriendName"></strong>?</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <button class="btn rating-btn" data-rating="1" title="Stupid">
+                            <i class="bi bi-emoji-frown-fill text-danger"></i>
+                            <span class="d-block small mt-1">Stupid</span>
+                        </button>
+                        <button class="btn rating-btn" data-rating="2" title="Cool">
+                            <i class="bi bi-emoji-sunglasses-fill text-info"></i>
+                            <span class="d-block small mt-1">Cool</span>
+                        </button>
+                        <button class="btn rating-btn" data-rating="3" title="Trustworthy">
+                            <i class="bi bi-emoji-heart-eyes-fill text-warning"></i>
+                            <span class="d-block small mt-1">Trustworthy</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-card border-0">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold"><i class="bi bi-pencil-square me-2 text-primary"></i>Edit Profile</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProfileForm">
+                        <div class="mb-3">
+                            <label class="form-label small text-muted">Full Name</label>
+                            <input type="text" class="form-control glass-input" id="editFullName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small text-muted">Bio</label>
+                            <textarea class="form-control glass-input" id="editBio" rows="2"></textarea>
+                        </div>
+                        <div class="row g-2 mb-3">
+                            <div class="col-6">
+                                <label class="form-label small text-muted">Location</label>
+                                <input type="text" class="form-control glass-input" id="editLocation">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label small text-muted">Education</label>
+                                <input type="text" class="form-control glass-input" id="editEducation">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small text-muted">Work / Occupation</label>
+                            <input type="text" class="form-control glass-input" id="editWork">
+                        </div>
+                        <div class="d-flex justify-content-end gap-2">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-gradient px-4">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ignore List Modal -->
+    <div class="modal fade" id="ignoreListModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-card border-0">
+                <div class="modal-header border-0 pb-1">
+                    <h5 class="modal-title fw-bold"><i class="bi bi-slash-circle text-danger me-2"></i>Ignore / Block List</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted small mb-3">Users on your ignore list cannot send you friend requests.</p>
+                    <div id="ignoredUsersListContainer" class="user-select-list">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

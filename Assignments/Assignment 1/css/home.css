@@ -1,0 +1,66 @@
+/* ===================================
+   ConnecFriend - Home Page Styles
+   =================================== */
+
+/* Sidebar */
+.sidebar-card {
+    overflow: hidden;
+}
+
+.friend-requests-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Post Card Stagger Animation */
+.post-card {
+    animation: fadeInUp 0.4s ease both;
+}
+
+.post-card:nth-child(1) { animation-delay: 0.05s; }
+.post-card:nth-child(2) { animation-delay: 0.1s; }
+.post-card:nth-child(3) { animation-delay: 0.15s; }
+.post-card:nth-child(4) { animation-delay: 0.2s; }
+.post-card:nth-child(5) { animation-delay: 0.25s; }
+
+/* Like/Dislike counts */
+.like-count, .dislike-count {
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* Online friends list */
+#onlineFriendsList .friend-card-mini,
+#suggestedFriendsList .friend-card-mini {
+    margin-bottom: 2px;
+}
+
+/* Suggested friend actions */
+.suggested-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.suggested-actions .btn {
+    padding: 2px 8px;
+    font-size: 0.72rem;
+    border-radius: 20px;
+}
+
+/* Post time since */
+.post-time {
+    font-size: 0.78rem;
+    color: var(--cf-text-muted);
+}
+
+/* Post author link */
+.post-author-link {
+    text-decoration: none;
+    color: var(--cf-text-primary);
+    font-weight: 600;
+    transition: var(--cf-transition);
+}
+
+.post-author-link:hover {
+    color: var(--cf-primary-light);
+}

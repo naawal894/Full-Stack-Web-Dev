@@ -1,0 +1,215 @@
+/* ===================================
+   ConnecFriend - Messages Page Styles
+   =================================== */
+
+/* Messages Container */
+.messages-container {
+    height: calc(100vh - 100px);
+    overflow: hidden;
+}
+
+/* Conversations Panel */
+.conversations-panel {
+    border-right: 1px solid var(--cf-glass-border);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.conversation-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.conversation-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: var(--cf-transition);
+    border-left: 3px solid transparent;
+}
+
+.conversation-item:hover {
+    background: rgba(108, 92, 231, 0.08);
+}
+
+.conversation-item.active {
+    background: rgba(108, 92, 231, 0.15);
+    border-left-color: var(--cf-primary);
+}
+
+.conversation-item img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.conversation-item .convo-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.conversation-item .convo-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.conversation-item .convo-preview {
+    font-size: 0.78rem;
+    color: var(--cf-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.conversation-item .convo-time {
+    font-size: 0.7rem;
+    color: var(--cf-text-muted);
+    flex-shrink: 0;
+}
+
+.conversation-item .unread-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--cf-primary);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Chat Panel */
+.chat-panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chat-empty {
+    padding: 40px;
+}
+
+.chat-active {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Chat Header */
+.chat-header {
+    flex-shrink: 0;
+}
+
+/* Chat Messages */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.message-bubble {
+    max-width: 70%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    animation: fadeIn 0.2s ease;
+    position: relative;
+}
+
+.message-bubble .msg-time {
+    font-size: 0.65rem;
+    color: var(--cf-text-muted);
+    margin-top: 4px;
+    display: block;
+}
+
+.message-sent {
+    align-self: flex-end;
+    background: var(--cf-primary);
+    color: white;
+    border-bottom-right-radius: 6px;
+}
+
+.message-sent .msg-time {
+    color: rgba(255, 255, 255, 0.6);
+    text-align: right;
+}
+
+.message-received {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--cf-text-primary);
+    border-bottom-left-radius: 6px;
+}
+
+/* Chat Input */
+.chat-input {
+    flex-shrink: 0;
+}
+
+/* New Conversation Modal */
+.user-select-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.user-select-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--cf-radius-sm);
+    cursor: pointer;
+    transition: var(--cf-transition);
+}
+
+.user-select-item:hover {
+    background: rgba(108, 92, 231, 0.15);
+}
+
+.user-select-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-select-item .user-info {
+    flex: 1;
+}
+
+.user-select-item .user-info h6 {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.user-select-item .user-info small {
+    color: var(--cf-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+    .conversations-panel {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        background: var(--cf-bg-card);
+    }
+
+    .conversations-panel.d-none-mobile {
+        display: none !important;
+    }
+
+    .chat-panel {
+        width: 100%;
+    }
+}

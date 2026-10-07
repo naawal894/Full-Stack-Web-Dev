@@ -1,0 +1,162 @@
+/* ===================================
+   ConnecFriend - Profile Page Styles
+   =================================== */
+
+/* Cover Photo */
+.profile-cover {
+    height: 200px;
+    background: var(--cf-gradient-1);
+    position: relative;
+}
+
+.profile-cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(transparent, var(--cf-bg-card));
+}
+
+/* Profile Avatar */
+.profile-avatar-wrapper {
+    position: relative;
+    margin-top: -60px;
+}
+
+.profile-avatar {
+    border: 4px solid var(--cf-bg-dark);
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.online-dot {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 18px;
+    height: 18px;
+    background: var(--cf-success);
+    border-radius: 50%;
+    border: 3px solid var(--cf-bg-dark);
+}
+
+/* Profile Info */
+.profile-info-list li {
+    padding: 8px 0;
+    color: var(--cf-text-secondary);
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--cf-glass-border);
+}
+
+.profile-info-list li:last-child {
+    border-bottom: none;
+}
+
+/* Profile Friends Grid */
+#profileFriendsList .col-4 {
+    text-align: center;
+}
+
+.profile-friend-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 6px;
+    border-radius: var(--cf-radius-sm);
+    cursor: pointer;
+    transition: var(--cf-transition);
+    text-decoration: none;
+    color: var(--cf-text-primary);
+}
+
+.profile-friend-tile:hover {
+    background: rgba(108, 92, 231, 0.1);
+    color: var(--cf-primary-light);
+}
+
+.profile-friend-tile img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 6px;
+    border: 2px solid var(--cf-glass-border);
+}
+
+.profile-friend-tile span {
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+/* Profile Action Buttons */
+#profileActions .btn {
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Rating Buttons in Modal */
+.rating-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 18px;
+    border-radius: var(--cf-radius-md);
+    border: 2px solid var(--cf-glass-border);
+    background: transparent;
+    color: var(--cf-text-secondary);
+    transition: var(--cf-transition);
+    cursor: pointer;
+}
+
+.rating-btn i {
+    font-size: 2rem;
+    margin-bottom: 4px;
+}
+
+.rating-btn:hover,
+.rating-btn.active {
+    transform: scale(1.1);
+}
+
+.rating-btn[data-rating="1"]:hover,
+.rating-btn[data-rating="1"].active {
+    border-color: var(--cf-danger);
+    color: var(--cf-danger);
+    background: rgba(225, 112, 85, 0.1);
+}
+
+.rating-btn[data-rating="2"]:hover,
+.rating-btn[data-rating="2"].active {
+    border-color: var(--cf-secondary);
+    color: var(--cf-secondary);
+    background: rgba(0, 206, 201, 0.1);
+}
+
+.rating-btn[data-rating="3"]:hover,
+.rating-btn[data-rating="3"].active {
+    border-color: var(--cf-accent-warm);
+    color: var(--cf-accent-warm);
+    background: rgba(253, 203, 110, 0.1);
+}
+
+/* Profile Header Card */
+.profile-header-card {
+    overflow: hidden;
+}
+
+@media (max-width: 767.98px) {
+    .profile-cover {
+        height: 140px;
+    }
+    .profile-avatar {
+        width: 90px !important;
+        height: 90px !important;
+    }
+    .profile-avatar-wrapper {
+        margin-top: -45px;
+    }
+}

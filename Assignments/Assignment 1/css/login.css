@@ -1,0 +1,250 @@
+/* ===================================
+   ConnecFriend - Login Page Styles
+   =================================== */
+
+.login-body {
+    background: var(--cf-bg-dark);
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Animated Background Circles */
+.bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.25;
+    animation: floatCircle 20s ease-in-out infinite;
+}
+
+.bg-circle-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--cf-primary);
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.bg-circle-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--cf-accent);
+    bottom: -80px;
+    left: -80px;
+    animation-delay: -7s;
+}
+
+.bg-circle-3 {
+    width: 300px;
+    height: 300px;
+    background: var(--cf-secondary);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: -14s;
+}
+
+@keyframes floatCircle {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(30px, -30px) scale(1.05); }
+    50% { transform: translate(-20px, 20px) scale(0.95); }
+    75% { transform: translate(20px, 10px) scale(1.02); }
+}
+
+/* Brand */
+.brand-logo-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--cf-gradient-2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 30px rgba(108, 92, 231, 0.4);
+    animation: fadeInUp 0.6s ease;
+}
+
+.brand-icon {
+    font-size: 2.2rem;
+    color: white;
+}
+
+.brand-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    background: var(--cf-gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 0.6s ease 0.1s both;
+}
+
+.brand-subtitle {
+    color: var(--cf-text-secondary);
+    font-size: 0.95rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+/* Login Card */
+.login-card {
+    animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+.login-card .form-floating label {
+    color: var(--cf-text-secondary);
+    display: flex;
+    align-items: center;
+    transition: var(--cf-transition);
+}
+
+.login-card .form-floating > .form-control:focus ~ label,
+.login-card .form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: var(--cf-primary-light);
+    transform: scale(0.85) translateY(-0.65rem) translateX(0.15rem);
+    opacity: 0.95;
+}
+
+.login-card .form-floating > .form-control::placeholder,
+.login-card .form-floating > .glass-input::placeholder {
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    opacity: 0 !important;
+}
+
+/* Password Toggle */
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--cf-text-muted);
+    z-index: 5;
+    padding: 4px 8px;
+    text-decoration: none;
+}
+
+.password-toggle:hover {
+    color: var(--cf-primary-light);
+}
+
+/* Forgot Link */
+.forgot-link {
+    color: var(--cf-primary-light);
+    transition: var(--cf-transition);
+}
+
+.forgot-link:hover {
+    color: var(--cf-accent);
+}
+
+/* Quick Login Buttons */
+.quick-login-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--cf-glass-border);
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff !important;
+    font-weight: 500;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: var(--cf-transition);
+}
+
+.quick-login-btn:hover {
+    background: rgba(108, 92, 231, 0.35);
+    border-color: var(--cf-primary-light);
+    color: #ffffff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+}
+
+.quick-login-btn img {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Container z-index */
+.container-fluid {
+    position: relative;
+    z-index: 1;
+}
+
+/* Auth Tabs */
+.auth-tabs {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 4px;
+    border-radius: 12px;
+    border: 1px solid var(--cf-glass-border);
+}
+
+.auth-tabs .nav-link {
+    color: var(--cf-text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 9px;
+    transition: var(--cf-transition);
+}
+
+.auth-tabs .nav-link:hover {
+    color: var(--cf-text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.auth-tabs .nav-link.active {
+    background: var(--cf-gradient-2);
+    color: white;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.35);
+}
+
+/* Avatar theme buttons */
+.avatar-theme-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--cf-transition);
+}
+
+.avatar-theme-btn:hover {
+    transform: scale(1.15);
+}
+
+.avatar-theme-btn.active {
+    border-color: white;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.auth-switch-link {
+    color: #00cec9 !important;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: var(--cf-transition);
+}
+
+.auth-switch-link:hover {
+    color: #fd79a8 !important;
+}
+
