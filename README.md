@@ -29,7 +29,18 @@ Each topic or activity is maintained in its own dedicated subdirectory containin
 
 ---
 
-## 📚 Course Topics & Tech Stack
+## 🧪 Laboratory Practicals
+
+| Lab | Title / Topic | Path | Key Concepts |
+| :--- | :--- | :--- | :--- |
+| **Lab 01** | Calculator & CSS Grid / Flexbox | [`Lab Tasks/Lab 1`](./Lab%20Tasks/Lab%201) | Pure HTML5/CSS3, responsive UI, themes |
+| **Lab 02** | HTML & CSS Layouts | [`Lab Tasks/Lab 2`](./Lab%20Tasks/Lab%202) | Timetable, Facebook clone, Portfolio, IEEE Paper |
+| **Lab 03** | Bootstrap 5.3 & E-Commerce | [`Lab Tasks/Lab 3`](./Lab%20Tasks/Lab%203) | Bootstrap migration, responsive navbar & cards |
+| **Lab 04** | Fundamentals of JavaScript | [`Lab Tasks/Lab 4`](./Lab%20Tasks/Lab%204) | Primitives, objects, loops, higher-order functions |
+| **Lab 05** | Advanced JavaScript (CampusFlow) | [`Lab Tasks/Lab 5`](./Lab%20Tasks/Lab%205) | ES Modules, classes, array methods, callbacks & promises |
+| **Lab 06** | Asynchronous JS & Promises | [`Lab Tasks/Lab 6`](./Lab%20Tasks/Lab%206) | `fetch`, `async/await`, concurrency with `Promise.all()` |
+
+---
 
 This repository tracks learning across a modern full-stack web development stack:
 
