@@ -1,5 +1,7 @@
+// Task 2: Academic Performance Intelligence Engine
+
 export function getGradeInfo(marks) {
-  if (marks >= 85 && marks <= 100) return { grade: 'A', gradePoints: 4.0 };
+  if (marks >= 85) return { grade: 'A', gradePoints: 4.0 };
   if (marks >= 80) return { grade: 'A-', gradePoints: 3.7 };
   if (marks >= 75) return { grade: 'B+', gradePoints: 3.3 };
   if (marks >= 70) return { grade: 'B', gradePoints: 3.0 };
@@ -21,10 +23,12 @@ export function processResults(results) {
   });
 }
 
+// Sort by marks descending, then name alphabetically (non-mutating)
 export function getRankedMeritList(list) {
   return [...list].sort((a, b) => b.marks !== a.marks ? b.marks - a.marks : a.name.localeCompare(b.name));
 }
 
+// Department statistics using reduce
 export function getDepartmentStatistics(list) {
   return list.reduce((stats, s) => {
     const dept = s.department;
@@ -40,6 +44,7 @@ export function getDepartmentStatistics(list) {
   }, {});
 }
 
+// Academic queries using array methods
 export function runAcademicQueries(processed, ranked) {
   const firstAbove85 = processed.find(s => s.marks > 85);
   const firstFailedIndex = processed.findIndex(s => s.marks < 50);
@@ -68,8 +73,7 @@ const results = [
   { id: 3, name: 'Usman', department: 'SE', course: 'FSWD', marks: 47 },
   { id: 4, name: 'Hina', department: 'AI', course: 'FSWD', marks: 73 },
   { id: 5, name: 'Ahmed', department: 'SE', course: 'FSWD', marks: 64 },
-  { id: 6, name: 'Zoya', department: 'AI', course: 'FSWD', marks: 91 },
-  { id: 7, name: 'Bilal', department: 'DS', course: 'FSWD', marks: 88 }
+  { id: 6, name: 'Zoya', department: 'AI', course: 'FSWD', marks: 91 }
 ];
 
 const processed = processResults(results);
@@ -77,16 +81,16 @@ const ranked = getRankedMeritList(processed);
 const deptStats = getDepartmentStatistics(processed);
 const queries = runAcademicQueries(processed, ranked);
 
-console.log('Processed Results:');
-console.table(processed);
+console.log('Processed Students:');
+processed.forEach(s => console.log(`${s.name} (${s.department}): ${s.marks} -> ${s.grade} (${s.status})`));
 
-console.log('Department Stats:');
+console.log('\nDepartment Stats:');
 console.log(deptStats);
 
-console.log('Academic Queries:');
+console.log('\nAcademic Queries:');
 console.log('First student > 85:', queries.firstAbove85?.name);
-console.log('First failed student index:', queries.firstFailedIndex);
+console.log('First failed index:', queries.firstFailedIndex);
 console.log('Any student failed:', queries.anyFailed);
 console.log('All marks valid:', queries.allInRange);
-console.log('Overall average:', queries.overallAverage);
+console.log('Class average:', queries.overallAverage);
 console.log('Top 3 students:', queries.topThree);

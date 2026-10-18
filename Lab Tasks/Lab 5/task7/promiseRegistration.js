@@ -1,19 +1,20 @@
+// Task 7: Promise-Based Multi-Service Registration Engine
+
 const students = {
   201: { id: 201, name: 'Sara Khan', completed: ['CS201'], enrolled: [] },
-  202: { id: 202, name: 'Usman Tariq', completed: [], enrolled: [] },
-  203: { id: 203, name: 'Ahmed Ali', completed: ['CS201'], enrolled: ['CS401'] }
+  202: { id: 202, name: 'Usman Tariq', completed: [], enrolled: [] }
 };
 
 const courses = {
-  'CS401': { code: 'CS401', title: 'Web Development', prerequisite: 'CS201', totalSeats: 2, enrolled: 1 },
-  'CS402': { code: 'CS402', title: 'Data Mining', prerequisite: 'CS201', totalSeats: 1, enrolled: 1 }
+  'CS401': { code: 'CS401', title: 'Web Development', prerequisite: 'CS201', totalSeats: 2, enrolled: 1 }
 };
 
+// Async operations returning Promises
 export function getStudent(id) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const s = students[id];
-      s ? resolve(s) : reject(new Error(`Student ${id} not found.`));
+      const student = students[id];
+      student ? resolve(student) : reject(new Error(`Student ${id} not found.`));
     }, 20);
   });
 }
@@ -21,8 +22,8 @@ export function getStudent(id) {
 export function getCourse(code) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const c = courses[code];
-      c ? resolve(c) : reject(new Error(`Course ${code} not found.`));
+      const course = courses[code];
+      course ? resolve(course) : reject(new Error(`Course ${code} not found.`));
     }, 20);
   });
 }
@@ -52,53 +53,46 @@ export function checkSeats(context) {
 }
 
 export function registerStudent(context) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
-      const { student, course } = context;
-      if (student.enrolled.includes(course.code)) {
-        reject(new Error(`Already registered in ${course.code}.`));
-      } else {
-        resolve({
-          studentId: student.id,
-          course: course.code,
-          status: 'REGISTERED'
-        });
-      }
+      resolve({
+        studentId: context.student.id,
+        course: context.course.code,
+        status: 'REGISTERED'
+      });
     }, 20);
   });
 }
 
+// Notification services for Part B
 export function sendEmail(reg) {
-  return new Promise((resolve) => setTimeout(() => resolve(`Email sent for ${reg.studentId}`), 20));
+  return new Promise((resolve) => setTimeout(() => resolve(`Email sent to ${reg.studentId}`), 20));
 }
 
 export function sendSMS(reg) {
-  return new Promise((_, reject) => setTimeout(() => reject(new Error('SMS service unavailable')), 30));
+  return new Promise((_, reject) => setTimeout(() => reject(new Error('SMS gateway failed')), 20));
 }
 
 export function writeAuditLog(reg) {
-  return new Promise((resolve) => setTimeout(() => resolve(`Audit logged for ${reg.course}`), 10));
+  return new Promise((resolve) => setTimeout(() => resolve(`Audit logged for ${reg.course}`), 20));
 }
 
-// Part A: Chained registration
+// Part A: Sequential registration using Promise chaining
 export function runRegistration(studentId, courseCode) {
+  let currentStudent;
+
   return getStudent(studentId)
     .then(student => {
-      return getCourse(courseCode).then(course => ({ student, course }));
+      currentStudent = student;
+      return getCourse(courseCode);
     })
-    .then(ctx => checkPrerequisites(ctx.student, ctx.course))
+    .then(course => checkPrerequisites(currentStudent, course))
     .then(ctx => checkSeats(ctx))
     .then(ctx => registerStudent(ctx));
 }
 
-// Part B: Post-registration with Promise.allSettled
+// Part B: Post-registration services using Promise.allSettled
 export function notifyAll(reg) {
-  const tasks = [
-    sendEmail(reg).then(() => 'fulfilled').catch(() => 'rejected'),
-    sendSMS(reg).then(() => 'fulfilled').catch(() => 'rejected'),
-    writeAuditLog(reg).then(() => 'fulfilled').catch(() => 'rejected')
-  ];
-
   return Promise.allSettled([
     sendEmail(reg),
     sendSMS(reg),
@@ -110,57 +104,50 @@ export function notifyAll(reg) {
   ]);
 }
 
-// Part C: Server selection with Promise.any
+// Part C: Server redundancy with Promise.any
 // Why Promise.any: We want the first *successful* response.
-// If Server A fails fast (e.g. 500 error in 10ms), Promise.race would fail immediately.
-// Promise.any ignores the rejection and waits for Server B's successful response.
+// If Server A fails fast (e.g. 500 error), Promise.race would fail immediately,
+// while Promise.any ignores the rejection and waits for Server B's success.
 function getServerA(code) {
-  return new Promise((_, reject) => setTimeout(() => reject(new Error('Server A 500 Error')), 15));
+  return new Promise((_, reject) => setTimeout(() => reject(new Error('Server A 500 error')), 10));
 }
 
 function getServerB(code) {
-  return new Promise((resolve) => setTimeout(() => resolve(courses[code]), 35));
+  return new Promise((resolve) => setTimeout(() => resolve(courses[code]), 30));
 }
 
 export function fetchCourseFastest(code) {
   return Promise.any([getServerA(code), getServerB(code)]);
 }
 
-// Execution
-async function demo() {
-  console.log('Part A: Registration Chain');
-  runRegistration(201, 'CS401')
-    .then(async reg => {
-      console.log('Registration Success:', reg);
+// Execution and testing
+async function run() {
+  console.log('Part A: Running Registration Chain:');
+  try {
+    const reg = await runRegistration(201, 'CS401');
+    console.log('Registration success:', reg);
 
-      console.log('\nPart B: Post-Registration Services (Promise.allSettled)');
-      const report = await notifyAll(reg);
-      console.log(report);
-    })
-    .catch(err => {
-      console.log('Registration Error:', err.message);
-    })
-    .finally(() => {
-      console.log('Registration flow finished.');
-    });
+    console.log('\nPart B: Post-Registration Services (Promise.allSettled):');
+    const report = await notifyAll(reg);
+    console.log(report);
+  } catch (err) {
+    console.log('Registration failed:', err.message);
+  }
 
-  // Test failure
-  setTimeout(() => {
-    console.log('\nTesting Chain Failure:');
-    runRegistration(202, 'CS401')
-      .catch(err => console.log('Expected chain failure caught:', err.message));
-  }, 150);
+  console.log('\nTesting Chain Failure (missing prerequisite):');
+  try {
+    await runRegistration(202, 'CS401');
+  } catch (err) {
+    console.log('Caught error:', err.message);
+  }
 
-  // Test Part C
-  setTimeout(async () => {
-    console.log('\nPart C: Fetch from redundant servers using Promise.any()');
-    try {
-      const course = await fetchCourseFastest('CS401');
-      console.log('Course received from fastest working server:', course.title);
-    } catch (err) {
-      console.log('Both servers failed:', err.errors);
-    }
-  }, 250);
+  console.log('\nPart C: Redundant Server Fetch (Promise.any):');
+  try {
+    const fastest = await fetchCourseFastest('CS401');
+    console.log('Fetched successfully from:', fastest.title);
+  } catch (err) {
+    console.log('All servers failed:', err.message);
+  }
 }
 
-demo();
+run();
