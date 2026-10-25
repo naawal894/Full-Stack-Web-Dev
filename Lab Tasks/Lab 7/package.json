@@ -1,0 +1,14 @@
+{
+  "name": "lab-7-apis",
+  "version": "1.0.0",
+  "description": "Lab 7 - In-Memory and Persistent REST APIs in Node.js",
+  "main": "01-memory-api.js",
+  "scripts": {
+    "start:memory": "node 01-memory-api.js",
+    "start:persistent": "node 02-persistent-api/server.js",
+    "test": "node --test 02-persistent-api/test/api.test.js"
+  },
+  "keywords": ["nodejs", "rest-api", "in-memory", "persistent", "crud"],
+  "author": "Nawal Fateh",
+  "license": "ISC"
+}
