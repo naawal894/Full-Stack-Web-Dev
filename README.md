@@ -40,6 +40,7 @@ Each topic or activity is maintained in its own dedicated subdirectory containin
 | **Lab 05** | Advanced JavaScript (CampusFlow) | [`Lab Tasks/Lab 5`](./Lab%20Tasks/Lab%205) | ES Modules, classes, array methods, callbacks & promises |
 | **Lab 06** | Asynchronous JS & Promises | [`Lab Tasks/Lab 6`](./Lab%20Tasks/Lab%206) | `fetch`, `async/await`, concurrency with `Promise.all()` |
 | **Lab 07** | In-Memory & Persistent REST APIs | [`Lab Tasks/Lab 7`](./Lab%20Tasks/Lab%207) | REST APIs, JSON file persistence, atomic writes, CRUD |
+| **Lab 08** | NestJS E-Commerce Backend API | [`Lab Tasks/Lab 8`](./Lab%20Tasks/Lab%208) | NestJS, Modules, Controllers, Services, Dependency Injection |
 
 ---
 
